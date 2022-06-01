@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='estilo.css') }}"/>
         <meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content="Criação de um blog utilizando Flask" />
 		<title>Meu primeiro blog</title>
 		<!--<link rel="stylesheet" type="text/css" href="styles.css" />-->
@@ -13,9 +13,9 @@
             <h1>Meu Blog</h1>
             <div class="metanav">
                 {% if not session.logado %}
-                    <a href="">login</a>
+                    <a href="{{ url_for('login') }}">login</a>
                 {% else %}    
-                    <a href="">logout</a>
+                    <a href="{{ url_for('logout') }}">logout</a>
                 {% endif %}        
 
             </div>
